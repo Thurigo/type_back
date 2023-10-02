@@ -39,6 +39,36 @@ class Classe extends Jogador {
     }
 }
 
+class inimigo {
+
+    nome: string;
+    vida: number;
+    gold: number;
+
+    classe: string
+    forca: number;
+    agilidade: number;
+    carisma: number;
+    defesa: number;
+    sorte: number;
+
+
+    constructor(nome: string, vida: number, gold: number, forca: number, agilidade: number, carisma: number, defesa: number, sorte: number, classe: string) {
+
+
+        this.nome = nome;
+        this.vida = vida;
+        this.gold = gold;
+
+        this.forca = forca;
+        this.agilidade = agilidade;
+        this.carisma = carisma;
+        this.defesa = defesa;
+        this.sorte = sorte;
+        this.classe = classe;
+
+    }
+}
 
 let vida: number; // Alterei "real" para "number" já que não há tipo "real" no TypeScript
 let luta: boolean;
