@@ -1,12 +1,10 @@
-
-import {Randon_numero} from "./engine";
-
+import { Randon_numero } from "./engine";
 
 class Jogador {
     nome: string;
     vida: number;
     gold: number;
-    
+
     constructor(nome: string, vida: number, gold: number) {
         this.nome = nome;
         this.vida = vida;
@@ -21,7 +19,7 @@ class Classe {
     carisma: number;
     defesa: number;
     sorte: number;
-    
+
     constructor(nome: string, forca: number, agilidade: number, carisma: number, defesa: number, sorte: number) {
         this.nome = nome;
         this.forca = forca;
@@ -32,48 +30,50 @@ class Classe {
     }
 }
 
-class Guerreiro extends Classe {
-    constructor() {
+class ClasseBase extends Classe {
+    constructor(nome: string) {
         const forca = Randon_numero(1, 20);
         const agilidade = Randon_numero(1, 20);
         const carisma = Randon_numero(1, 20);
         const defesa = Randon_numero(1, 20);
         const sorte = Randon_numero(1, 20);
-        super("Guerreiro", forca, agilidade, carisma, defesa, sorte);
+        super(nome, forca, agilidade, carisma, defesa, sorte);
     }
 }
 
-class Bardo extends Classe {
+export class Guerreiro extends ClasseBase {
     constructor() {
-        const forca = Randon_numero(1, 20);
-        const agilidade = Randon_numero(1, 20);
-        const carisma = Randon_numero(1, 20);
-        const defesa = Randon_numero(1, 20);
-        const sorte = Randon_numero(1, 20);
-        super("Bardo", forca, agilidade, carisma, defesa, sorte);;
+        super("Guerreiro");
     }
 }
 
-class Mago extends Classe {
+export class Bardo extends ClasseBase {
     constructor() {
-        const forca = Randon_numero(1, 20);
-        const agilidade = Randon_numero(1, 20);
-        const carisma = Randon_numero(1, 20);
-        const defesa = Randon_numero(1, 20);
-        const sorte = Randon_numero(1, 20);
-        super("Mago", forca, agilidade, carisma, defesa, sorte);;
+        super("Bardo");
     }
 }
 
-class Ladrao extends Classe {
+export class Mago extends ClasseBase {
     constructor() {
-        const forca = Randon_numero(1, 20);
-        const agilidade = Randon_numero(1, 20);
-        const carisma = Randon_numero(1, 20);
-        const defesa = Randon_numero(1, 20);
-        const sorte = Randon_numero(1, 20);
-        super("Ladrão", forca, agilidade, carisma, defesa, sorte);;
+        super("Mago");
     }
 }
 
-export { Jogador, Guerreiro, Bardo, Mago, Ladrao };
+export class Ladrao extends ClasseBase {
+    constructor() {
+        super("Ladrão");
+    }
+}
+
+// Combine Jogador com as outras classes
+export class JogadorClasse extends Jogador {
+    classe: ClasseBase;
+
+    constructor(nome: string, vida: number, gold: number, classe: ClasseBase) {
+        super(nome, vida, gold);
+        this.classe = classe;
+    }
+}
+
+// Exemplo de criação de um jogador com a classe específica
+

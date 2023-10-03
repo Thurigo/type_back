@@ -1,7 +1,7 @@
 
 import {Randon_numero} from "./engine";
 
-export class Inimigo {
+class Inimigo {
     
     vida: number;
     
@@ -28,7 +28,7 @@ export class Inimigo {
     }
 }
 
-function criarListaDeInimigo (numeroDeClasses: number): Inimigo[] {
+export function criarListaDeInimigo (numeroDeClasses: number): Inimigo[] {
     const listaDeinimigo: Inimigo[] = [];
     const nomes = ["Goblin", "Aranha", "Bruno", "Jose", "Cloti", "Edu", "Dragao", "Cleber"];
 
@@ -47,4 +47,3 @@ function criarListaDeInimigo (numeroDeClasses: number): Inimigo[] {
 
     return listaDeinimigo;
 }
-
