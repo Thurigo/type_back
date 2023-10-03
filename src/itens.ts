@@ -4,7 +4,7 @@ import { Randon_numero } from "./engine"
 
 class Itens {
     vida: number;
-    
+    gold:number;
     nome: string;
     forca: number;
     agilidade: number;
@@ -12,12 +12,12 @@ class Itens {
     defesa: number;
     sorte: number;
 
-    constructor(nome: string, forca: number, agilidade: number, carisma: number, defesa: number, sorte: number, vida:number) {
+    constructor(gold:number ,nome: string, forca: number, agilidade: number, carisma: number, defesa: number, sorte: number, vida:number) {
 
 
         this.nome = nome;
         this.vida = vida;
-        
+        this.gold = gold;
         this.forca = forca;
         this.agilidade = agilidade;
         this.carisma = carisma;
@@ -38,9 +38,9 @@ function criarListaDeItens(numeroDeItens: number): Itens[] {
         const carisma = Randon_numero(1, 20);
         const defesa = Randon_numero(1, 20);
         const sorte = Randon_numero(1, 20);
+        const gold = Randon_numero(1, 20);
 
-
-        const iten = new Itens(nome, sorte, vida, forca, agilidade, carisma, defesa, );
+        const iten = new Itens(gold,nome, sorte, vida, forca, agilidade, carisma, defesa, );
         listaDeItens.push(iten);
     }
 

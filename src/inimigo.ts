@@ -1,7 +1,7 @@
 
 import {Randon_numero} from "./engine";
 
-class Inimigo {
+export class Inimigo {
     
     vida: number;
     
@@ -48,5 +48,3 @@ function criarListaDeInimigo (numeroDeClasses: number): Inimigo[] {
     return listaDeinimigo;
 }
 
-const listaDeClasses = criarListaDeInimigo(8);
-console.log(listaDeClasses);
