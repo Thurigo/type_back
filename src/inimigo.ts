@@ -1,5 +1,5 @@
 
-import {Randon_numero} from "./engine";
+import {Randon_numero} from "./randon_number";
 
 class Inimigo {
     

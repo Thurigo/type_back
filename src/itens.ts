@@ -1,5 +1,5 @@
 
-import { Randon_numero } from "./engine"
+import { Randon_numero } from "./randon_number"
 
 
 class Itens {
@@ -26,10 +26,9 @@ class Itens {
     }
 }
 
-function criarListaDeItens(numeroDeItens: number): Itens[] {
+export function criarListaDeItens(numeroDeItens: number): Itens[] {
     const listaDeItens: Itens[] = [];
     const nomes = ["1", "2", "3", "4", "5", "6", "7", "8"];
-
     for (let i = 0; i < numeroDeItens; i++) {
         const nome = nomes[i % nomes.length];
         const vida = Randon_numero(1, 20);
@@ -39,16 +38,11 @@ function criarListaDeItens(numeroDeItens: number): Itens[] {
         const defesa = Randon_numero(1, 20);
         const sorte = Randon_numero(1, 20);
         const gold = Randon_numero(1, 20);
-
         const iten = new Itens(gold,nome, sorte, vida, forca, agilidade, carisma, defesa, );
         listaDeItens.push(iten);
     }
-
-
-
     return listaDeItens;
 }
-
 
 const listaDeItens = criarListaDeItens(8);
 console.log(listaDeItens);

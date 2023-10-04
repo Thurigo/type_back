@@ -1,4 +1,7 @@
-import { Randon_numero } from "./engine";
+import { Randon_numero } from "./randon_number";
+
+
+
 
 class Jogador {
     nome: string;
@@ -65,7 +68,6 @@ export class Ladrao extends ClasseBase {
     }
 }
 
-// Combine Jogador com as outras classes
 export class JogadorClasse extends Jogador {
     classe: ClasseBase;
 
@@ -74,6 +76,3 @@ export class JogadorClasse extends Jogador {
         this.classe = classe;
     }
 }
-
-// Exemplo de criação de um jogador com a classe específica
-
