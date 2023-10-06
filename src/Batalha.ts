@@ -6,7 +6,6 @@ import{criarListaDeInimigo}from './inimigo'
 import { criarListaDeItens } from './itens';
 
 
-console.log('cheguei')
  const jogadorGuerreiro = new JogadorClasse("Thurigo", 50, 50, new Guerreiro());
 
 const jogadorBardo = new JogadorClasse("BardoMan", 80, 70, new Bardo());

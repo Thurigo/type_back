@@ -2,7 +2,7 @@
 import { Randon_numero } from "./randon_number"
 
 
-class Itens {
+export class Itens {
     vida: number;
     gold:number;
     nome: string;
@@ -43,6 +43,3 @@ export function criarListaDeItens(numeroDeItens: number): Itens[] {
     }
     return listaDeItens;
 }
-
-const listaDeItens = criarListaDeItens(8);
-console.log(listaDeItens);

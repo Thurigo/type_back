@@ -1,7 +1,7 @@
 
 import {Randon_numero} from "./randon_number";
 
-class Inimigo {
+export class Inimigo {
     
     vida: number;
     
