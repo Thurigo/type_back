@@ -1,21 +1,34 @@
 
 import { JogadorClasse, Guerreiro, Bardo, Mago, Ladrao } from './Playerclass';
 
-import{criarListaDeInimigo}from './inimigo'
-
-import { criarListaDeItens } from './itens';
+import { criarListaDeInimigo } from './inimigo'
 
 
- const jogadorGuerreiro = new JogadorClasse("Thurigo", 50, 50, new Guerreiro());
-
-const jogadorBardo = new JogadorClasse("BardoMan", 80, 70, new Bardo());
-
-const jogadorMago = new JogadorClasse("Magicus", 90, 60, new Mago());
-
-const jogadorLadrao = new JogadorClasse("Sneaky", 120, 40, new Ladrao());
+import { Randon_numero } from './randon_number';
 
 
-//console.log(jogadorGuerreiro);
-console.log(jogadorBardo);
-console.log(jogadorMago);
-console.log(jogadorLadrao);
+export function DroparGold(sorte: number): number {
+    let gold = 3;
+    if (sorte > 1)
+        gold += 1
+
+    return gold
+}
+
+export function Atacar(Jogador: JogadorClasse): JogadorClasse {
+
+    const dado = Randon_numero(1, 3);
+    const listaDeinimigo = criarListaDeInimigo(3);
+    const inimigo1 = listaDeinimigo[dado];
+
+    if (Jogador.classe.forca > inimigo1.defesa) {
+        console.log('aranha morta');
+        Jogador.gold += DroparGold(Jogador.classe.sorte);
+    }else if ((Jogador.classe.defesa + Jogador.vida) < inimigo1.forca){
+        Jogador.vida -= (inimigo1.forca -= Jogador.classe.defesa )
+    }else {
+        Jogador.classe.defesa -= inimigo1.forca
+    }
+
+    return Jogador
+} 
