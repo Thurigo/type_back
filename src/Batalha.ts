@@ -14,11 +14,9 @@ export function DroparGold(sorte: number): number {
 
     return gold
 }
-export function Fugir(Jogador: JogadorClasse): JogadorClasse{
+
+export function Fugir(Jogador: JogadorClasse, inimigo1: Inimigo): JogadorClasse{
     
-    const dado = Randon_numero(1, 3);
-    const listaDeinimigo = criarListaDeInimigo(3);
-    const inimigo1 = listaDeinimigo[dado];
     if (Jogador.classe && Jogador.classe.agilidade > inimigo1.agilidade) {
         return Jogador
     }
@@ -31,12 +29,7 @@ export function Fugir(Jogador: JogadorClasse): JogadorClasse{
     return Jogador
 } 
 
-export function Atacar(Jogador: JogadorClasse): JogadorClasse {
-
-    const dado = Randon_numero(1, 2);
-    const listaDeinimigo = criarListaDeInimigo(3);
-    const inimigo1 = listaDeinimigo[dado];
-    console.log(inimigo1);
+export function Atacar(Jogador: JogadorClasse, inimigo1: Inimigo): JogadorClasse {
 
     if (Jogador.classe && Jogador.classe.forca > inimigo1.defesa) {
         console.log('aranha morta');
@@ -50,3 +43,17 @@ export function Atacar(Jogador: JogadorClasse): JogadorClasse {
     return Jogador
 } 
 
+
+export function Papear(Jogador: JogadorClasse, inimigo1: Inimigo): JogadorClasse{
+    
+    if (Jogador.classe && Jogador.classe.carisma > inimigo1.carisma) {
+        return Jogador
+    }
+    else if ((Jogador.classe.defesa + Jogador.vida) < inimigo1.forca){
+        Jogador.vida -= (inimigo1.forca -= Jogador.classe.defesa )
+    }else {
+        Jogador.classe.defesa -= inimigo1.forca
+    }
+
+    return Jogador
+} 

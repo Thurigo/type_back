@@ -35,11 +35,11 @@ class Classe {
 
 class ClasseBase extends Classe {
     constructor(nome: string) {
-        const forca = Randon_numero(1,20);
-        const agilidade = Randon_numero(1,20);
-        const carisma = Randon_numero(1,20);
-        const defesa = Randon_numero(1,20);
-        const sorte = Randon_numero(1,20);
+        const forca = Randon_numero(1,1);
+        const agilidade = Randon_numero(1,1);
+        const carisma = Randon_numero(1,1);
+        const defesa = Randon_numero(1,1);
+        const sorte = Randon_numero(1,1);
         super(nome, forca, agilidade, carisma, defesa, sorte);
     }
 }
