@@ -15,6 +15,11 @@ export function DroparGold(sorte: number): number {
     return gold
 }
 
+export function GoldAndar(Jogador: JogadorClasse): JogadorClasse {
+    Jogador.gold += 5
+    return Jogador
+}
+
 export function Fugir(Jogador: JogadorClasse, inimigo1: Inimigo): JogadorClasse {
 
     if (Jogador.classe && Jogador.classe.agilidade > inimigo1.agilidade) {
@@ -66,7 +71,7 @@ export function TentarSorte(Jogador: JogadorClasse, inimigo1: Inimigo): JogadorC
         } else {
             Jogador.classe.defesa -= inimigo1.forca
         }
-    }else{
+    } else {
         Jogador.classe.sorte += 1;
     }
 
