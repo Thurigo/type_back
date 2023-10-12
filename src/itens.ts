@@ -1,4 +1,5 @@
 
+import { JogadorClasse } from "./Playerclass";
 import { Randon_numero } from "./randon_number"
 
 
@@ -42,4 +43,15 @@ export function criarListaDeItens(numeroDeItens: number): Itens[] {
         listaDeItens.push(iten);
     }
     return listaDeItens;
+    {
+    }
+        
+}
+export function Dado_maluko (jogador: JogadorClasse):JogadorClasse{
+    jogador.vida = Randon_numero(1,1);
+    jogador.classe.agilidade = Randon_numero(1,1);
+    jogador.classe.carisma = Randon_numero(1,1);
+    jogador.classe.defesa = Randon_numero(1,1);
+    jogador.classe.sorte = Randon_numero(1,1);
+return jogador
 }
