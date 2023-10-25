@@ -34,12 +34,12 @@ export function criarListaDeInimigo (numeroDeClasses: number): Inimigo[] {
 
     for (let i = 0; i < numeroDeClasses; i++) {
         const nome = nomes[i % nomes.length];
-        const vida = Randon_numero(1,1);
-        const forca = Randon_numero(1,1);
-        const agilidade = Randon_numero(1,1);
-        const carisma = Randon_numero(1,1);
-        const defesa = Randon_numero(1,1);
-        const sorte = Randon_numero(1,1);
+        const vida = Randon_numero(1,20);
+        const forca = Randon_numero(1,20);
+        const agilidade = Randon_numero(1,20);
+        const carisma = Randon_numero(1,20);
+        const defesa = Randon_numero(1,20);
+        const sorte = Randon_numero(1,20);
 
         const inimigo = new Inimigo(nome, vida, forca, agilidade, carisma, defesa, sorte);
         listaDeinimigo.push(inimigo);
